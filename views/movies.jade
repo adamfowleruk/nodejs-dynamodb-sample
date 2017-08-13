@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1= title
+  p Search Year: #{searchyear}
+  p Search Title: #{searchtitle}
+  p Success?: #{success}
+  p Error?: #{error}
+  div
+    table
+      thead
+        tr
+          th No
+          th Title
+          th Rating
+          th Year
+          th Plot
+      tbody
+        each item, i in movies
+          tr
+            td #{i}
+            td #{item.title}
+            td #{item.info.rating}
+            td #{item.year}
+            td #{item.info.plot}

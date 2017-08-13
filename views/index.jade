@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  h2= searchtitle
+  p Find a single movie by exact year and title
+  form(name="movie-get", method="get", action="/movies", enctype="multipart/form-data")
+    div.input
+      span.label Title
+      input(type="text", name="title")
+    iv.input
+      span.label Year
+      input(type="text", name="year")
+    div.actions
+      input(type="submit", value="Get")
+
+  h2= yeartitle
+  p List all movies released in a specified year
+  form(name="movie-search", method="post", action="/movies")
+    div.input
+      span.label Year
+      input(type="text", name="year")
+    div.actions
+      input(type="submit", value="Search")
